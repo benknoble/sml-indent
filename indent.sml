@@ -593,7 +593,7 @@ structure Indent = struct
                            (* D.print [ Int.toString (i+1), " : " ]; *)
                            (* D.print [ Line.debugString l, "\n" ]; *)
                            print (Line.toString l);
-                           (* D.print (if Line.isComment l then [ " (\* c", Int.toString (Line.commentIndent l), " *\)" ] else []); *)
+                           (* D.print (if Line.isComment l then [ " (\\* c", Int.toString (Line.commentIndent l), " *\\)" ] else []); *)
                            print "\n"
                         end) lines
       end
