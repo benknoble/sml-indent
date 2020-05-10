@@ -1,8 +1,12 @@
 
-Group is
+Group
+  structure Indent
+  structure Main
+is
    $/basis.cm
    $/ml-yacc-lib.cm
    util.sml
    sym.sml
    indent.lex
    indent.sml
+   run.sml
