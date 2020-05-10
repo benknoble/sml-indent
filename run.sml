@@ -29,6 +29,7 @@ structure Main = struct
   fun main (arg0 : string, argv : string list) : OS.Process.status =
     let
         val { debug, line, help } = Args.parse argv
+        handle Fail _ => { debug=false, line=(~1), help=true }
     in
       (
         if help
