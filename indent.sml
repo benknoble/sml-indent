@@ -7,7 +7,7 @@
 structure S = Sym
 
 structure Config = struct
-   val basic = 3
+   val basic = 2
 end
 
 structure Lex = struct
