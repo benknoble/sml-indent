@@ -19,24 +19,24 @@ val y = 5
 ## Indenting comments:
 
 ```sml
-      (*
-          foo works like this
-      *)
-      fun foo x =
+(*
+    foo works like this
+*)
+fun foo x =
 ```
 
 ```sml
-      (*
-          foo works like this *)
-      fun foo x =
+(*
+    foo works like this *)
+fun foo x =
 ```
 
 ```sml
-      (*
-          foo works like this
-             and this
-      *)
-      fun foo x =
+(*
+    foo works like this
+       and this
+*)
+fun foo x =
 ```
 
 ## Problems with indent.sml I don't care about.
