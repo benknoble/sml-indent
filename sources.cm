@@ -1,6 +1,19 @@
 
 Group
+  structure Sym
+
+  structure IndentLexer
+
+  structure Config
+  structure Lex
+  structure Parse
+  structure Line
+  structure Mode
+  structure Comment
+  structure Stack
   structure Indent
+
+  structure Args
   structure Main
 is
    $/basis.cm
