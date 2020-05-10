@@ -2,7 +2,7 @@
 structure Args = struct
    type t = { debug : bool, line : int, help : bool }
 
-   fun parse () : t =
+   fun parse argv : t =
       let
          val debug = ref false
          val line = ref NONE
@@ -21,18 +21,23 @@ structure Args = struct
                { debug = !debug, line = line, help = !help }
             end
       in
-         loop (CommandLine.arguments ())
+         loop argv
       end
 end
 
-val _ =
-   let
-      val { debug, line, help } = Args.parse ()
-   in
-      if help
-      then print "Usage: indent < file [-help|-line N|-debug]\n"
-      else let in
-         if debug then Debug.debug := true else ()
-       ; Indent.doit line
-      end
+structure Main = struct
+  fun main (arg0 : string, argv : string list) : OS.Process.status =
+    let
+        val { debug, line, help } = Args.parse argv
+    in
+      (
+        if help
+        then print "Usage: indent < file [-help|-line N|-debug]\n"
+        else let in
+          if debug then Debug.debug := true else ()
+        ; Indent.doit line
+        end
+      )
+      ; OS.Process.success
    end
+end
